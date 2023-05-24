@@ -45,12 +45,12 @@ public class Cup {
 
     public void setLiquidVolume(short liquidVolume) {
 
-        if (liquidVolume > 600 ) {
-           System.err.println("You poured too much liquid");
-        } else if(liquidVolume <= 0 ) {
-            System.err.println("You didn't pour anything");
+        if (liquidVolume <= 600 && liquidVolume >= 0  ) {
+           
+           this.liquidVolume = liquidVolume;
+         
         }else{
-            this.liquidVolume = liquidVolume;
+            System.err.println("Cup can contain 600 ml max");
         }
     }
 
