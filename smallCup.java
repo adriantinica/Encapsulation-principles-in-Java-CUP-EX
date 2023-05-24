@@ -1,9 +1,9 @@
 package kitchen;
 
-public class smallCup extends Cup {
+public class SmallCup extends Cup {
 
-    public smallCup(String liquidName,short liquidVolume){
-        
+    public SmallCup(String liquidName, short liquidVolume){
+        super(liquidName, liquidVolume);
     }
 
 
@@ -12,7 +12,7 @@ public class smallCup extends Cup {
 
     @Override
     public void setLiquidVolume(short liquidVolume) {
-        if (liquidVolume < 250 && liquidVolume >= 0) {
+        if (liquidVolume <= 250 && liquidVolume >= 0) {
             super.setLiquidVolume(liquidVolume);
         } else {
            System.err.println("Small cup can contain 250 ml only !!!"); 
