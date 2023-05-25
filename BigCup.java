@@ -2,6 +2,8 @@ package kitchen;
 
 public class BigCup extends Cup {
 
+    private final int MAX_VOLUME = 1000;
+
     public BigCup(String liquidName, short liquidVolume){
         super(liquidName, liquidVolume);
     }
@@ -9,13 +11,16 @@ public class BigCup extends Cup {
 
     @Override
     public void setLiquidVolume(short liquidVolume) {
-        if (liquidVolume  > 0 && liquidVolume <=1000 ) {
-            super.setLiquidVolume(liquidVolume);
-        } else {
-           System.err.println("Invalid liquid volume! Volume should be between 0 and 1000 ml."); 
+        
+        if (liquidVolume > MAX_VOLUME  ) {
+           
+            super.liquidVolume = MAX_VOLUME;
+          
+        }else{
+             super.liquidVolume = liquidVolume;
         }
-      
     }
 
     
 }
+
