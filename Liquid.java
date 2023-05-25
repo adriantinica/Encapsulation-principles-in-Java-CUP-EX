@@ -29,14 +29,15 @@ public class Liquid {
     }
 
 
-    public void setLiquidName(String liquidName) {
-        if(liquidName == null){
-            System.err.println("Error: Liquid name is not inserted !!!");
-        }else{
+   public void setLiquidName(String liquidName) {
+        if (liquidName.equals("Water") || liquidName.equals("Milk") || liquidName.equals("Tea") ) {
             this.liquidName = liquidName;
+        } else {
+            System.err.println("You try to pour the wrong liquid !!! ");
         }
-       
+        
     }
+
 
 
     public short getLiquidVolume() {
