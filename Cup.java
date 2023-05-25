@@ -2,17 +2,19 @@ package kitchen;
 public class Cup {
 
     private String liquidName;
-    private short liquidVolume;
+    protected short liquidVolume;
+
+    //    Volumul lichidului nu poate depasi 600ml si nu poate fi negativ!
+    private final int MAX_VOLUME = 600;
 
     public Cup(){
 
     }
 
     public Cup( String liquidName, short liquidVolume ){
-    
-
+        
         this.liquidName = liquidName;
-        this.liquidVolume = liquidVolume;
+        setLiquidVolume(liquidVolume);
     }
 
     //INTERBARE - Se aplica oare capsula asupra acestei clase?
@@ -41,16 +43,16 @@ public class Cup {
     }
 
 
-    //    Volumul lichidului nu poate depasi 600ml si nu poate fi negativ!
+    // changed according to 2-nd part of the exercise......
 
     public void setLiquidVolume(short liquidVolume) {
 
-        if (liquidVolume <= 600 && liquidVolume >= 0  ) {
+        if (liquidVolume > MAX_VOLUME  ) {
            
-           this.liquidVolume = liquidVolume;
+           this.liquidVolume = MAX_VOLUME;
          
         }else{
-            System.err.println("Cup can contain 600 ml max");
+            this.liquidVolume = liquidVolume;
         }
     }
 
